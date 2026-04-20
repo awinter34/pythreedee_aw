@@ -1,4 +1,4 @@
-##About:
+## About:
 A simple python/pygame pipline for rendering 3d objects. (Lighting has not been implemented yet)
 <img width="686" height="634" alt="Screenshot from 2026-04-19 17-26-15" src="https://github.com/user-attachments/assets/35116e64-ca07-4603-89d6-20053b543d7d" />
 ##Usage:
