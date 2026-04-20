@@ -7,7 +7,7 @@ from pythreedee import setup
 setup.run()
 This will create a blank window.
 To add shapes use
-setup.render.init_object("<type>", [<args>], "<id>")
+setup.render.init_object("type", [args], "id")
 In the base version of the package, there are 4 types of objects, 0(cube), 1(pyramid), 2(sphere), 3(polygon)
 The arguments are formated with a list, identical for every shape except the polygon. [x, y, z, size, pitch, yaw] and the polygon has ,points, faces] added to it.
 The id is just a string that can be used to refer to the object later. for example you can initialize an object with an id of "obj1",
@@ -20,7 +20,7 @@ custom shapes:
 Since this package currently only has 4 shapes, to add more shapes you can either:
 create a polygon with the points and faces of your shape,
 or locate the 'shapes.py' file in the package and create a new class named however you like with def __init__(self, size) in it,
-and inside the __init__ function, have self.size = size, self.hs = size/2, hs = self.hs, self.points = [<points here, you can use hs to make it relative to size>], self.faces = [<faces here>]
+and inside the __init__ function, have self.size = size, self.hs = size/2, hs = self.hs, self.points = [points here, you can use hs to make it relative to size], self.faces = [faces here]
 example:
 class Cube:
     def __init__(self, size):
@@ -57,7 +57,7 @@ to the def init_object() function.
 Next find the def build_object_points() function at line 74
 add
     elif obj["type"] == 4:
-        shape = shapes.<your object class name here>(obj["size"])
+        shape = shapes.your object class name here(obj["size"])
 And now you can initialize your object by using the setup.render.init_object function with the type being "4"
 That was very complicated so I might add a .blend converter or smth so you can import .blend files directly or smth
 
@@ -67,3 +67,6 @@ once the zip file is downloaded, extract it. Once extracted open a terminal at y
 Run: pip install "path/to/package/parent/directory/pythreedee_aw"
 example, if it was installed in my Downloads directory (linux)
 pip install "/home/<myusername>/Downloads/pythreedee_aw"
+
+
+if you managed to read this without having a stroke, congratulations!
