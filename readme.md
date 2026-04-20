@@ -1,7 +1,7 @@
-About:
+##About:
 A simple python/pygame pipline for rendering 3d objects. (Lighting has not been implemented yet)
 <img width="686" height="634" alt="Screenshot from 2026-04-19 17-26-15" src="https://github.com/user-attachments/assets/35116e64-ca07-4603-89d6-20053b543d7d" />
-Usage:
+##Usage:
 In your project, import the package and use:
 from pythreedee import setup
 setup.run()
@@ -16,18 +16,19 @@ For polygons the points and faces arguments are two lists. Points is formated as
 Faces is another list formated as such: [(0, 1, 2), (2, 3, 4), etc] where each number is a point that will be connected into a face, and each tuple is one face.
 Here is an example init:
 setup.render.init_object("0", [0, 0, 200, 200, 45, 45], "obj1")
-custom shapes:
-Since this package currently only has 4 shapes, to add more shapes you can either:
+##custom shapes:
+Since this package currently only has 3 shapes, to add more shapes you can either:
 create a polygon with the points and faces of your shape,
 or locate the 'shapes.py' file in the package and create a new class named however you like with def __init__(self, size) in it,
 and inside the __init__ function, have self.size = size, self.hs = size/2, hs = self.hs, self.points = [points here, you can use hs to make it relative to size], self.faces = [faces here]
 example:
-class Cube:
+
+`class Cube:
     def __init__(self, size):
         self.size = size
         self.hs = size / 2
 
-        hs = self.hs  # local shortcut
+        hs = self.hs
 
         self.points = [
             [-hs,  hs, -hs],
@@ -48,7 +49,7 @@ class Cube:
             (1, 2, 6), (1, 6, 5),  # bottom
             (0, 3, 7), (0, 7, 4)   # top
         ]
-
+`
 After this, find the render.py file and scroll to the bottom.
 Add
 elif objtype == "4":
