@@ -3,12 +3,16 @@ A simple python/pygame pipline for rendering 3d objects. (Lighting has not been 
 <img width="686" height="634" alt="Screenshot from 2026-04-19 17-26-15" src="https://github.com/user-attachments/assets/35116e64-ca07-4603-89d6-20053b543d7d" />
 ## Usage:
 In your project, import the package and use:
+```
 from pythreedee import setup
-`setup.run()`
+setup.run()`
+```
 This will create a blank window.
 To add shapes use
 `setup.render.init_object("type", [args], "id")`
-In the base version of the package, there are 4 types of objects, 0(cube), 1(pyramid), 2(sphere), 3(polygon)
+
+In the base version of the package, there are 4 types of objects: 0(cube), 1(pyramid), 2(sphere), 3(polygon)
+
 The arguments are formated with a list, identical for every shape except the polygon. [x, y, z, size, pitch, yaw] and the polygon has ,points, faces] added to it.
 The id is just a string that can be used to refer to the object later. for example you can initialize an object with an id of "obj1",
 then later run the init function again with different parameters and same ID, and "obj1" will take on the new parameters.
